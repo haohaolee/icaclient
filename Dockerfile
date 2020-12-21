@@ -6,6 +6,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
                           iceweasel && \
     apt-get -q -y install libxmu6 \
                           libglu1-mesa && \
+    apt-get -q -y install locales && \
+    sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
+    locale-gen && \
     \
     wget -O - https://www.citrix.com/de-de/downloads/workspace-app/linux/workspace-app-for-linux-latest.html 2>/dev/null | grep '<a' | grep icaclient_ | grep _amd64 | sed 's/.*rel="/https:/g' | sed 's/".*//g' | sed 's/^/wget -O icaclient.deb /g' | sh && \
     \

@@ -1,10 +1,10 @@
-image: desktopcontainers/icaclient:latest
+image: haohaolee/icaclient:latest
 manifests:
-  - image: desktopcontainers/icaclient:latest-amd64
+  - image: haohaolee/icaclient:latest-amd64
     platform:
       architecture: amd64
       os: linux
-  - image: desktopcontainers/icaclient:latest-arm32v7
+  - image: haohaolee/icaclient:latest-arm32v7
     platform:
       architecture: arm
       os: linux
